@@ -3,7 +3,7 @@
 #include <unordered_set>
 using namespace std;
 
-class TrieNode {
+class TrieNode { 
 public:
     TrieNode *left, *right;
     TrieNode() : left(NULL), right(NULL) {}
