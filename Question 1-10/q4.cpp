@@ -1,23 +1,32 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
+#include <numeric>
 using namespace std;
-int main(){
-    int n;cin>>n;
-    vector<int> a(n);
-    int sum=0;
-    for(int i=0;i<n;i++){
-        cin>>a[i];
-        sum+=a[i];
-    }
-    int pre=0;
-    for(int i=0;i<n-1;i++){
-        pre+=a[i];
-        if(pre*2==sum){
-            cout<<"YES"<<endl;
-            return 0;
+
+bool canBeSplit(vector<int>& arr) {
+    int totalSum = accumulate(arr.begin(), arr.end(), 0);
+    int leftSum = 0;
+
+    for (int i = 0; i < arr.size() - 1; i++) {
+        leftSum += arr[i];
+        int rightSum = totalSum - leftSum;
+
+        if (leftSum == rightSum) {
+            cout << "Split index: " << i << endl;
+            return true;
         }
     }
-    cout<<"NO"<<endl;
+
+    return false;
+}
+
+int main() {
+    vector<int> arr = {1, 2, 3, 3};
+    
+    if (canBeSplit(arr))
+        cout << "Array can be split with equal sum" << endl;
+    else
+        cout << "Array cannot be split with equal sum" << endl;
+
     return 0;
 }
-//time complexity O(n) and space complexity O(1)

@@ -21,7 +21,8 @@ void findPair(int arr[],int n,int target){
         if(sum==target){
             cout<<arr[left]<<" "<<arr[right]<<endl;
             return;
-        }else if(sum<target) left++;
+        }
+        else if(sum<target) left++;
         else right--;
     }
     cout<<"No pair found"<<endl;

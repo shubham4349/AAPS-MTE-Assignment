@@ -38,7 +38,7 @@ void printList(Node* head) {
     cout<<endl;
 }
 
-int main() {
+int main()  { 
     int n;
     Node* head = new Node(1);
     Node* temp = head;

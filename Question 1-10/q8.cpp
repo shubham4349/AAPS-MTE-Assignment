@@ -4,7 +4,7 @@ using namespace std;
 string longestPalindrome(string s){
     int start=0,maxLen=1;
     for(int i=0;i<s.length();i++){
-        int l=i,r=i;
+        int l=i,r=i; 
         while(l>=0&&r<s.length()&&s[l]==s[r]){
             if(r-l+1>maxLen){
                 start=l;

@@ -11,6 +11,7 @@ string longestCommonPrefix(vector<string>& strs){
             if(prefix=="") return "";
         }
     }
+    
     return prefix;
 }
 
